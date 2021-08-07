@@ -19,7 +19,7 @@ module.exports = (app) => {
     //app.get('/api/User', UserController.getAll);
     app.post('/api/User', UserController.create);
     //app.get('/api/User/:id', UserController.getOne);
-    app.get('/api/User/login/:username/:password', UserController.login); // TODO: make this more secure, don't pass passwords in the URL
+    app.post('/api/User/login', UserController.login);
     //app.put('/api/User/:id', UserController.update);
     //app.delete('/api/User/:id', UserController.delete);
 }
