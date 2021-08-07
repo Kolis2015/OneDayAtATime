@@ -20,6 +20,7 @@ module.exports = (app) => {
     app.post('/api/User', UserController.create);
     //app.get('/api/User/:id', UserController.getOne);
     app.post('/api/User/login', UserController.login);
+    app.post('/api/User/logout', UserController.logout);
     //app.put('/api/User/:id', UserController.update);
     //app.delete('/api/User/:id', UserController.delete);
 }

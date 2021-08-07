@@ -74,5 +74,12 @@ module.exports.login = (req, res) => {
             console.log("error with find one")
             res.status(400).json({ message: "Invalid Login Attempt" });
         })
-}
+};
 
+module.exports.logout = (req, res) => {
+    console.log("logging out!");
+    res.clearCookie("usertoken");  // same name as above for saving the cookie
+    res.json({
+        message: "You have successfully logged out",
+    })
+}
