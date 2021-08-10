@@ -16,6 +16,9 @@ there's always rains. No bullying, sexism, racism, etc will be tolerated on this
 rank sites that have work the best for you and leave comments</p>       
 
           <h5>Thanks....</h5>
+         <button onClick={(e) => (window.location.href='/')}>
+      Home Page </button>
+
         </div>
     );
 };
