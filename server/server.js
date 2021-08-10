@@ -2,6 +2,8 @@
 //		that way we can use it EVERYWHERE in our server
 require("dotenv").config();
 
+const port = 8000;
+
 // import express and other libraries
 const express = require('express');
 const app = express();
@@ -28,6 +30,6 @@ const routes = require('./routes/routes');
 routes(app);  // run the routes function and pass in our app server
 
 // start the app server listening
-app.listen(process.env.MY_PORT, () => {
-	console.log("The express app server is listening on port: " + process.env.MY_PORT );
+app.listen(port, () => {
+	console.log("The express app server is listening on port: " + port );
 })

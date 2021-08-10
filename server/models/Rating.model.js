@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const RatingSchema = mongoose.Schema({
     Link :{
         type: String,

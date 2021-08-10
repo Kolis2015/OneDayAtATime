@@ -1,6 +1,6 @@
-const BlogController = require('../controller/Blog.controller');
-const RatingController = require('../controller/Rating.controller');
-const UserController = require('../controller/User.controller');
+const BlogController = require('../controllers/Blog.controller');
+const RatingController = require('../controllers/Rating.controller');
+const UserController = require('../controllers/User.controller');
 
 module.exports = (app) => {
     app.get('/api/Blog', BlogController.getAll);

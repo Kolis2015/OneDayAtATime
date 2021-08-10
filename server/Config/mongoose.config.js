@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbName = process.env.DB_NAME;
+const dbName = 'OneDayAtATime';
 
 
 mongoose.connect("mongodb://localhost/" + dbName, {

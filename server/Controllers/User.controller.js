@@ -1,11 +1,10 @@
-const User = require('../model/User.model');
+const User = require('../models/User.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 module.exports.create = (req, res) => {
     console.log('inside create');
     console.log('req.body');
-    validateUser(req.body);
     User.create(req.body)
         .then((newUser) => {
             console.log(newUser);
@@ -23,8 +22,6 @@ module.exports.create = (req, res) => {
 module.exports.login = (req, res) => {
     console.log('inside login');
     console.log('req.body');
-
-    validateUser(req.body);
 
     User.findOne({ Name: req.body.name })
         .then((userRecord) => {

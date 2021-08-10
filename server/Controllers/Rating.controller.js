@@ -1,4 +1,4 @@
-const Rating = require('../model/Rating.model');
+const Rating = require('../models/Rating.model');
 
 module.exports.getAll = (req, res) => {
     console.log("inside get all");

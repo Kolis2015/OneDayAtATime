@@ -1,4 +1,4 @@
-const Blog = require('../model/Blog.model');
+const Blog = require('../models/Blog.model');
 
 module.exports.getAll = (req, res) => {
     console.log("inside get all");
