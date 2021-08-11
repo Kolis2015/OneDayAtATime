@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken');
+const secret = 'pepper';
 
 module.exports = {
 	authenticate(req, res, next) {
 		jwt.verify(req.cookies.usertoken,
-			process.env.JWT_SECRET,
+			secret,
 		
 			(err, payload) => {
 				if(err) {

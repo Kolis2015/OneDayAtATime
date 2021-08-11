@@ -1,6 +1,7 @@
 const User = require('../models/User.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const secret = 'pepper';
 
 module.exports.create = (req, res) => {
     console.log('inside create');
@@ -23,28 +24,28 @@ module.exports.login = (req, res) => {
     console.log('inside login');
     console.log('req.body');
 
-    User.findOne({ Name: req.body.name })
+    User.findOne({ Email: req.body.Email })
         .then((userRecord) => {
             // check if this returned object is null
             if (userRecord === null) {
                 // email not found in the collection / DB
-                res.status(400).json({ message: "Invalid Login Attempt" });
+                res.status(400).json({ message: "Email not found. Would you like to sign up?" });
             } else {
                 // the username was found
                 // compare the password given to us in the request with the one stored in the DB
-                bcrypt.compare(req.body.password, userRecord.password)
+                bcrypt.compare(req.body.Password, userRecord.Password)
                     .then((isPasswordValid) => {
                         if (isPasswordValid) {
                             console.log("password is valid");
                             console.log(userRecord);
-                            console.log(process.env.JWT_SECRET);
+                            console.log(secret);
                             res.cookie("usertoken", // name of the cookie
                                 jwt.sign({
                                     // payload is the data I want to save
                                     user_id: userRecord._id,
                                     name: userRecord.Name
                                 },
-                                    process.env.JWT_SECRET), // used to sign / hash the data in the cookie
+                                    secret), // used to sign / hash the data in the cookie
                                 {
                                     // configuration settings for this cookie
                                     httpOnly: true,
@@ -58,11 +59,11 @@ module.exports.login = (req, res) => {
 
                         } else {
                             // passwords didn't match
-                            res.status(400).json({ message: "Invalid Login Attempt" });
+                            res.status(400).json({ message: "Incorrect password" });
                         }
                     })
                     .catch((err) => {
-                        console.log("error with compare pws")
+                        console.log("error with compare pws: " + err)
                         res.status(400).json({ message: "Invalid Login Attempt" });
                     })
             }

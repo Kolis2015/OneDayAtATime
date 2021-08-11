@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const UserSchema = mongoose.Schema({
     Name :{
@@ -19,5 +20,20 @@ const UserSchema = mongoose.Schema({
 
 
 })
+UserSchema.pre("save", function(next) {
+	// encrypt the password BEFORE it is saved to the DB
+	// we KNOW that the passwords match already
+	console.log("inside pre-save");
+
+	bcrypt.hash(this.Password, 10)
+		.then((hashedPassword) => {
+			// update the password in this instance to use the hashed returned version
+			this.Password = hashedPassword;
+			next();
+		})
+		// .catch((err) => {
+		// 	console.log("Error while hashing the password")
+		// });
+});
 
 module.exports = mongoose.model('User', UserSchema);

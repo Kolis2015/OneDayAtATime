@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import { navigate } from '@reach/router';
 
-const Signup = () => {
-  const [name, setName]= useState(""); 
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmPassword]= useState('')
   const [errorMessage, setErrorMessage] = useState("");
 
-  const Signup = event => {
+  const Login = event => {
     event.preventDefault();
-    axios.post("http://localhost:8000/api/User", { 
-        Name: name,
+    axios.post("http://localhost:8000/api/User/login", { 
+        
         Email: email, 
         Password: password,
       },
@@ -26,7 +24,7 @@ const Signup = () => {
         console.log(res.cookie);
         console.log(res);
         console.log(res.data, 'is res data!');
-        navigate("/");
+        navigate("/Introduction");
       })
       .catch(err => {
         console.log(err.response);
@@ -36,21 +34,11 @@ const Signup = () => {
 
   return (
     <div>
-      <h1>ONE DAY AT A TIME!</h1>
+      <h1>LOGIN</h1>
       <p className="error-text">{errorMessage ? errorMessage : ""}</p>
-      <button 
-            type="submit"
-            onClick={() => window.location.href='/Login'}
-          >Login!</button>
-      <form onSubmit={Signup}>
+      <form onSubmit={Login}>
         <div>
-             <label>Name</label>
-          <input
-            type="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+          
 
           <label>Email</label>
           <input
@@ -68,22 +56,16 @@ const Signup = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-           <label>confirmpassword</label>
-          <input
-            type="password"
-            name="confirmpassword"
-            value={confirmpassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+         
         </div>
         <div className="center">
           <button 
             type="submit"
-          >Sign up</button>
+          >Login</button>
         </div>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default Login;
