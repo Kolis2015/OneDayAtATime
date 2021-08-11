@@ -64,6 +64,10 @@ const Login = () => {
           >Login</button>
         </div>
       </form>
+      <h2>Welcome Back!</h2>
+
+      <p>Please take advantage of the site information, support, blogs, etc...
+Remember you are always welcome here!</p>
     </div>
   );
 };
