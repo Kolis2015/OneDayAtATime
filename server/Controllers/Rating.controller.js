@@ -18,7 +18,7 @@ module.exports.getAll = (req, res) => {
 module.exports.getAverage = (req, res) => {
     console.log("inside get average");
 
-    Rating.find({link: req.params.link}) // filter to ratings for the particular specified link
+    Rating.find({Link: req.params.Link}) // filter to ratings for the particular specified link
         .then((linkRatings) => {
             console.log(linkRatings);
 
@@ -43,8 +43,12 @@ module.exports.getAverage = (req, res) => {
 
 module.exports.create = (req, res) => {
     console.log('inside create');
-    console.log('req.body');
+    console.log(req.body);
     validateRating(req.body);
+
+    // delete existing rating by this user for this link
+    Rating.findOneAndDelete({UserID: req.params.UserID, Link: req.params.Link});
+
     Rating.create(req.body)
         .then((newRating) => {
             console.log(newRating);
@@ -77,6 +81,23 @@ module.exports.getOne = (req, res) => {
 
 
 
+};
+
+module.exports.getByUserAndLink = (req, res) => {
+    console.log('inside getByUserAndLink');
+    console.log('looking for user:' + req.params.UserID + ", link: " + req.params.Link);
+
+
+    Rating.findOne({UserID: req.params.UserID, Link: req.params.Link})
+        .then((oneRating) => {
+            console.log(oneRating);
+            res.json(oneRating);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(400).json(err);
+
+        })
 };
 
 module.exports.update = (req, res) => {

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { navigate } from '@reach/router';
+import ResourceLink from '../Component/ResourceLink';
 
 const Resources = () => {
     return (
         <div>
             <h2>Websites Resouces</h2>
-            <a href="https://www.nami.org/About-Mental-Illness/Treatments/Types-of-Mental-Health-Professional">Nami.org</a>   
+            <ResourceLink Url="https://www.nami.org/About-Mental-Illness/Treatments/Types-of-Mental-Health-Professional" />   
 
             <h2>Emergency Numbers!!!</h2>
 

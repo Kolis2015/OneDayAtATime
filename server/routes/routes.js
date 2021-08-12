@@ -10,9 +10,10 @@ module.exports = (app) => {
     app.delete('/api/Blog/:id', BlogController.delete);
 
     app.get('/api/Rating', RatingController.getAll);
-    app.get('/api/Rating/average/:link', RatingController.getAverage); // get average rating of a link across all users
+    app.post('/api/Rating/average', RatingController.getAverage); // get average rating of a link across all users
     app.post('/api/Rating', RatingController.create);
     app.get('/api/Rating/:id', RatingController.getOne);
+    app.post('/api/Rating/Lookup', RatingController.getByUserAndLink);
     app.put('/api/Rating/:id', RatingController.update);
     app.delete('/api/Rating/:id', RatingController.delete);
 
