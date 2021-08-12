@@ -7,7 +7,23 @@ const Resources = () => {
     return (
         <div>
             <h2>Websites Resouces</h2>
-            <ResourceLink Url="https://www.nami.org/About-Mental-Illness/Treatments/Types-of-Mental-Health-Professional" />   
+            <ResourceLink Url="https://www.nami.org/About-Mental-Illness/Treatments/Types-of-Mental-Health-Professional" /> 
+            <ResourceLink Url="https://www.nationwidechildrens.org/specialties/behavioral-health" />
+            <ResourceLink Url="https://www.nimh.nih.gov/health/find-help/" />   
+            <ResourceLink Url="https://www.mentalhealth.gov/get-help/immediate-help" />                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+            <ResourceLink Url="https://www.cdc.gov/wtc/mentalhealth.html" /> 
+            <ResourceLink Url="https://www.betterhelp.com/helpme/?utm_source=AdWordsutm_medium=Search_PPC_cutm_term=%2Bmental+%2Bhealth+%2Bservices_butm_content=112453035975network=gplacement=target=matchtype=b" />
+            <ResourceLink Url="https://www.familycentre.org/counselling?gclid=CjwKCAjwr56IBhAvEiwA1fuqGiu49OZ9QvcC5zf2iGoZEKE6AzCrthZlMpy91E0IZqf4WLxZj2eEzBoCFKcQAvD_BwE" />
+            <ResourceLink Url="https://www.samhsa.gov/find-help/national-helpline" />
+            <ResourceLink Url="https://salienceneuro.com/7-facebook-pagesto-follow-about-mental-health-support-and-education/" />
+            <ResourceLink Url="https://suicidepreventionlifeline.org/" />
+            <ResourceLink Url="https://suicidepreventionlifeline.org/chat/" />
+            <ResourceLink Url="https://www.veteranscrisisline.net/" />
+            <ResourceLink Url="https://www.tcn.org/crisis" />
+            <ResourceLink Url="https://www.crisistextline.org/" />
+
+         
+  
 
             <h2>Emergency Numbers!!!</h2>
 
