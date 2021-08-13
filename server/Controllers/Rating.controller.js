@@ -1,4 +1,6 @@
 const Rating = require('../models/Rating.model');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 
 module.exports.getAll = (req, res) => {
     console.log("inside get all");
@@ -46,8 +48,11 @@ module.exports.create = (req, res) => {
     console.log(req.body);
     validateRating(req.body);
 
+    const decodedJWT = jwt.decode(req.cookies.usertoken, { complete: true });
+	req.body.UserID = decodedJWT.payload.user_id;
+
     // delete existing rating by this user for this link
-    Rating.findOneAndDelete({UserID: req.params.UserID, Link: req.params.Link});
+    Rating.findOneAndDelete({UserID: mongoose.Types.ObjectId(req.body.UserID), Link: req.body.Link});
 
     Rating.create(req.body)
         .then((newRating) => {

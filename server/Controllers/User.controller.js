@@ -48,7 +48,7 @@ module.exports.login = (req, res) => {
                                     secret), // used to sign / hash the data in the cookie
                                 {
                                     // configuration settings for this cookie
-                                    httpOnly: true,
+                                    httpOnly: false, // allow cookie to be read by JavaScript so it can actually be useful
                                     expires: new Date(Date.now() + 900000)
                                 }
                             )

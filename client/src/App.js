@@ -4,6 +4,7 @@ import { Router } from '@reach/router';
 import Introduction from './Component/Introduction';
 import Resources from './Component/Resource';
 import Login from './Component/Login';
+import Postblog from './Component/Postblog';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Router>
         <Signup path='/' />
         <Introduction path='/Introduction' />
-        <Resources path= '/Resources' />
-        <Login path= '/Login' />
+        <Resources path='/Resources' />
+        <Login path='/Login' />
+        <Postblog path='/Postblog' />
       </Router>
     </div>
   );

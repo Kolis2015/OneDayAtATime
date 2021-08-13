@@ -1,7 +1,7 @@
 // start with loading the .env file data
 //		that way we can use it EVERYWHERE in our server
 require("dotenv").config();
-
+const jwt = require('jsonwebtoken');
 const port = 8000;
 
 // import express and other libraries

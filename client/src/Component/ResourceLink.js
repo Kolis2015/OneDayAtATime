@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import axios from "axios";
-import { navigate } from '@reach/router';
+//import { navigate } from '@reach/router';
 import Cookies from 'js-cookie';
 
 const ResourceLink = (props) => {
+    const [yourRating, setYourRating] = useState(3);
     const url = props.Url;
 
     const getYourRating = () => {
@@ -50,13 +51,12 @@ const ResourceLink = (props) => {
     }
 
     const communityRating = getCommunityRating();
-    let yourRating = getYourRating();
+    //setYourRating(getYourRating()); // get rating from database, save in state variable
 
-    const saveRating = (url, rating) => {
+    const saveRating = (url) => {
         axios.post("http://localhost:8000/api/Rating", {
             Link: url,
-            Rating: rating, // TODO: determine why this is not being pulled from the web UI
-            UserID: Cookies.get('user_id') // TODO: determine why this is not loading
+            Rating: yourRating
         },
             {
                 // this will force the sending of the credentials / cookies so they can be updated
@@ -83,8 +83,8 @@ const ResourceLink = (props) => {
                 Community Rating: <span>{communityRating}</span>
             </div>
             <div>
-                Your Rating: <input type="number" min="1" max="5" value={yourRating} />
-                <input type="button" onClick={(e) => saveRating(url, yourRating)} value="Save" />
+                Your Rating: <input type="number" min="1" max="5" defaultValue={yourRating} onChange={(e) => setYourRating(e.target.value)}/>
+                <input type="button" onClick={(e) => saveRating(url)} value="Save" />
             </div>
         </div>
     );

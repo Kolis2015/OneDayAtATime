@@ -1,4 +1,5 @@
 const Blog = require('../models/Blog.model');
+const jwt = require('jsonwebtoken');
 
 module.exports.getAll = (req, res) => {
     console.log("inside get all");
@@ -17,8 +18,12 @@ module.exports.getAll = (req, res) => {
 
 module.exports.create = (req, res) => {
     console.log('inside create');
-    console.log('req.body');
+    console.log(req.body);
     validateBlog(req.body);
+    	// decode our JWT to get the currently logged in user's _id to add to the new
+	//		restaurant document in the collection
+	const decodedJWT = jwt.decode(req.cookies.usertoken, { complete: true });
+	req.body.UserID = decodedJWT.payload.user_id;
     Blog.create(req.body)
         .then((newBlog) => {
             console.log(newBlog);

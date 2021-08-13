@@ -9,8 +9,8 @@ const RatingSchema = mongoose.Schema({
         Rating :{
         type: Number,
         required: [true, 'A Rating is required'],
-        min: [1, 'A rating must be between 1 and 5.'],
-        max: [5, 'A rating must be between 1 and 5.']
+        min: [1, 'A rating must be between 1 and 5'],
+        max: [5, 'A rating must be between 1 and 5']
     },
     UserID: {
         type: String,
