@@ -40,6 +40,7 @@ const Postblog = () => {
     return (
         <div>
             <h2>Submit Your blog!</h2>
+            <img src="Postblog_Background.jpg" className="background" />
             <h4>Title</h4>
             <input
                 type="text"
