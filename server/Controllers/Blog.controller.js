@@ -5,7 +5,7 @@ module.exports.getAll = (req, res) => {
     console.log("inside get all");
 
     Blog.find()
-        .then((allpet) => {
+        .then((allblog) => {
             console.log(allblog);
             res.json(allblog);
         })

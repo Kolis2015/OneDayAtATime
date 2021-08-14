@@ -5,6 +5,7 @@ import Introduction from './Component/Introduction';
 import Resources from './Component/Resource';
 import Login from './Component/Login';
 import Postblog from './Component/Postblog';
+import BlogPage from './Component/BlogPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Resources path='/Resources' />
         <Login path='/Login' />
         <Postblog path='/Postblog' />
+        <BlogPage path='/BlogPage' />
       </Router>
     </div>
   );
