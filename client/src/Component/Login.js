@@ -34,6 +34,7 @@ const Login = () => {
 
   return (
     <div>
+       <img src="sunrise.jpg" className="background" />
       <h1>LOGIN</h1>
       <p className="error-text">{errorMessage ? errorMessage : ""}</p>
       <form onSubmit={Login}>

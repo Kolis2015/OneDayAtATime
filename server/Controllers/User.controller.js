@@ -76,8 +76,20 @@ module.exports.login = (req, res) => {
 
 module.exports.logout = (req, res) => {
     console.log("logging out!");
+    // TODO: why is clearCookie not working? we can't log out!
     res.clearCookie("usertoken");  // same name as above for saving the cookie
     res.json({
         message: "You have successfully logged out",
     })
+}
+
+module.exports.isLoggedIn = (req, res) => {
+    console.log("is user logged in?");
+    const decodedJWT = jwt.decode(req.cookies.usertoken, { complete: true }); // get cookie
+    console.log(decodedJWT);
+    if (decodedJWT) { // does it exist?
+        res.json(true);
+    } else {
+        res.json(false);
+    }
 }

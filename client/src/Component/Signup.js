@@ -35,15 +35,21 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h1>ONE DAY AT A TIME!</h1>
+    <div className="frontpage">
+      <h1 className="title">ONE DAY AT A TIME!</h1>
       <p className="error-text">{errorMessage ? errorMessage : ""}</p>
       <button 
             type="submit"
-            onClick={() => window.location.href='/Login'}
+            onClick={() => window.location.href='/Login'}className=
+            "Signupbutton"
           >Login!</button>
       <form onSubmit={Signup}>
         <div>
+          <h4 className="quotes"> The way I see it, if you want the rainbow, you
+gotta put up with the rain
+ by Dolly Parton</h4>
+ <h4 className="quotes1">It matters if you don't give up
+ _ Stephen Hawking</h4>
              <label>Name</label>
           <input
             type="name"
@@ -79,9 +85,17 @@ const Signup = () => {
         <div className="center">
           <button 
             type="submit"
+            className="Signupbutton"
           >Sign up</button>
+          <br/>
+          <h5 className="quotes2">*******This site is only for information and support
+services. It is not intended to cure or
+professionally help anybody. If you experiencing
+trouble that needs attention immediately please
+call 911!</h5>
         </div>
       </form>
+      <img src="rainbow.jpg" />
     </div>
   );
 };

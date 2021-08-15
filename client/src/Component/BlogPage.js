@@ -24,7 +24,7 @@ const BlogPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="letstalk">
             <h1>BLOG PAGE</h1>
             <h5>**Please feel free to leave comments in your
                 blogs at the end of them or suggest links to other

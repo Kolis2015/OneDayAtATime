@@ -22,6 +22,7 @@ module.exports = (app) => {
     //app.get('/api/User/:id', UserController.getOne);
     app.post('/api/User/login', UserController.login);
     app.post('/api/User/logout', UserController.logout);
+    app.post('/api/User/isLoggedIn', UserController.isLoggedIn);
     //app.put('/api/User/:id', UserController.update);
     //app.delete('/api/User/:id', UserController.delete);
 }

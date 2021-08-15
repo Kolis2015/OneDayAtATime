@@ -43,3 +43,33 @@
   left: 0px;
   z-index: -1;
 }
+.letstalk{
+  background-color: rgb(0, 81, 255);
+}
+
+.notalone{
+  background-color: #ffffaa;
+}
+.Introductionbutton{
+  background-color: mediumaquamarine;
+}
+.Signupbutton{
+  background-color: peru;
+}
+.frontpage{
+  background-color: royalblue;
+
+}
+.quotes{
+  color: lime;
+}
+.quotes1{
+  color: rgb(156, 22, 134);
+}
+.quotes2{
+  color: black;
+  font-weight: bold;
+}
+.title{
+  color:  darkblue;
+}

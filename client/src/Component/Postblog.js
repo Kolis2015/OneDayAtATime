@@ -1,9 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 //import { navigate } from '@reach/router';
 import Cookies from 'js-cookie';
+import { navigate } from "@reach/router";
 
 const Postblog = () => {
+    useEffect(() => {
+        axios.post("http://localhost:8000/api/User/isLoggedIn", {},
+            {
+                // this will force the sending of the credentials / cookies so they can be updated
+                //    XMLHttpRequest from a different domain cannot set cookie values for their own domain 
+                //    unless withCredentials is set to true before making the request
+                withCredentials: true
+            })
+            .then((res) => {
+                console.log(res.cookie);
+                console.log(res);
+                console.log(res.data, 'is res data!');
+                const isLoggedIn = res.data;
+                if (!isLoggedIn) {
+                    navigate("/Login");
+                }
+            })
+            .catch(err => {
+                console.log(err.response);
+            });
+    })
+
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const saveBlogPost = () => {
