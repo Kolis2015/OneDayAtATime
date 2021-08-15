@@ -26,8 +26,8 @@ const Resources = () => {
             });
     })
     return (
-        <div>
-            <h2>Websites Resouces</h2>
+        <div className="resourcepage">
+            <h2>Websites Resources</h2>
             <ResourceLink Url="https://www.nami.org/About-Mental-Illness/Treatments/Types-of-Mental-Health-Professional" />
             <ResourceLink Url="https://www.nationwidechildrens.org/specialties/behavioral-health" />
             <ResourceLink Url="https://www.nimh.nih.gov/health/find-help/" />
