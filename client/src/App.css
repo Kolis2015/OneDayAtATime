@@ -51,7 +51,9 @@
   background-color: #ffffaa;
 }
 .Introductionbutton{
-  background-color: mediumaquamarine;
+  background-color: rgb(102, 172, 205);
+  border-radius:300px;
+font-size: 20px;
 }
 .Signupbutton{
   background-color: peru;
@@ -126,4 +128,9 @@ table {
 
 .bold {
   font-weight: bold;
+}
+.resourcebutton{
+  border-radius:300px;
+  font-size: 20px;
+  
 }

@@ -101,16 +101,16 @@ const Resources = () => {
 
 
 
-            <button onClick={(e) => (window.location.href = '/BlogPage')}>
+            <button onClick={(e) => (window.location.href = '/BlogPage')} className="resourcebutton">
                 Blog Page </button>
 
-            <button onClick={(e) => (window.location.href = '/Postblog')}>
+            <button onClick={(e) => (window.location.href = '/Postblog')} className="resourcebutton">
                 Post a Blog </button>
 
-            <button onClick={(e) => (window.location.href = '/Introduction')}>
+            <button onClick={(e) => (window.location.href = '/Introduction')} className="resourcebutton">
                 Introduction Page </button>
 
-            <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => { window.location.href = "/Login" }))} className="Introductionbutton">
+            <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => { window.location.href = "/Login" }))} className="resourcebutton">
                 Log off </button>
         </div >
     );
