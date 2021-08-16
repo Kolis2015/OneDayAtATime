@@ -38,7 +38,8 @@ const Postblog = () => {
         axios.post("http://localhost:8000/api/Blog", {
             UserID: cookieData,
             Title: title,
-            Text: text
+            Text: text,
+            Date: new Date()
         },
             {
                 // this will force the sending of the credentials / cookies so they can be updated
