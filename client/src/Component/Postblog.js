@@ -29,6 +29,7 @@ const Postblog = () => {
 
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
+    const [nickname, setNickname] = useState("");
     const saveBlogPost = () => {
         // save the blog post
         const cookieData = document.cookie
@@ -39,7 +40,8 @@ const Postblog = () => {
             UserID: cookieData,
             Title: title,
             Text: text,
-            Date: new Date()
+            Date: new Date(),
+            Nickname:nickname
         },
             {
                 // this will force the sending of the credentials / cookies so they can be updated
@@ -65,6 +67,13 @@ const Postblog = () => {
         <div>
             <h2>Submit Your blog!</h2>
             <img src="Postblog_Background.jpg" className="background" />
+            <h4>Nickname:</h4>
+            <input
+                type="text"
+                name="nickname"
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+            />
             <h4>Title:</h4>
             <input
                 type="text"

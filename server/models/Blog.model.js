@@ -21,6 +21,11 @@ const BlogSchema = mongoose.Schema({
         required: [true, 'A Date is required'],
         minLength:[4, 'A Date must be at least 4 characters long']
     },
+    Nickname:{
+        type: String,
+        
+        minLength:[2, 'A Nickname must be at least 2 characters long']
+    },
 
 
 })

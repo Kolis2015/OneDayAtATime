@@ -35,6 +35,7 @@ const BlogPage = () => {
                     return (
                         <div>
                             <h1>{blogPost.Title}</h1>
+                            <h2>{blogPost.Nickname}</h2>
                             <h2>{blogPost.Date == null ? "" : new Date(blogPost.Date).toLocaleDateString('en-US')}</h2>
                             <p>{blogPost.Text}</p>
                         </div>
