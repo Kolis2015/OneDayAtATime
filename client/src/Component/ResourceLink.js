@@ -79,10 +79,10 @@ const ResourceLink = (props) => {
             <div>
                 <a href={url}>{url}</a>
             </div>
-            <div>
+            <div className="hidden">
                 Community Rating: <span>{communityRating}</span>
             </div>
-            <div>
+            <div className="hidden">
                 Your Rating: <input type="number" min="1" max="5" defaultValue={yourRating} onChange={(e) => setYourRating(e.target.value)}/>
                 <input type="button" onClick={(e) => saveRating(url)} value="Save" />
             </div>

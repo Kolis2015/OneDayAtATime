@@ -44,7 +44,7 @@
   z-index: -1;
 }
 .letstalk{
-  background-color: rgb(0, 81, 255);
+  background-color: rgb(71, 109, 190);
 }
 
 .notalone{
@@ -69,6 +69,7 @@
 .quotes2{
   color: black;
   font-weight: bold;
+  font-size: 16px;
 }
 .title{
   color:  darkblue;
@@ -76,4 +77,53 @@
 }
 .resourcepage{
   background-color: darkseagreen;
+  width: 1000px;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+.Postblogbutton{
+border-radius:300px;
+font-size: 20px;
+color: dodgerblue;
+}
+
+textarea {
+  height: 200px;
+  width: 600px;
+}
+h4{
+  font-weight: bold;
+  font-style: italic;
+  color: darkblue;
+  font-size: 25px;
+
+}
+.BlogPage{
+  color: rgb(67, 90, 28);
+  font-size: 20px;
+  border-radius: 300px;
+}
+.title1{
+color: floralwhite;
+}
+.title3{
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(255, 244, 230);
+  font-size: 16px;
+}
+.rainbow{
+  height: 350px;
+}
+
+table {
+  margin: auto;
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
 }

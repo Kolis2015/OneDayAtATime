@@ -1,7 +1,8 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { navigate } from '@reach/router';
 import ResourceLink from '../Component/ResourceLink';
+import ReactSession from 'react-client-session';
 
 const Resources = () => {
     useEffect(() => {
@@ -25,6 +26,15 @@ const Resources = () => {
                 console.log(err.response);
             });
     })
+    const logOut = () => {
+        // expire cookie
+        document.cookie = 'token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        localStorage.removeItem('token')
+        sessionStorage.removeItem('token')
+
+        // log out
+        axios.post("http://localhost:8000/api/User/logout").then(() => window.location.href = "/Login")
+    }
     return (
         <div className="resourcepage">
             <h2>Websites Resources</h2>
@@ -33,8 +43,8 @@ const Resources = () => {
             <ResourceLink Url="https://www.nimh.nih.gov/health/find-help/" />
             <ResourceLink Url="https://www.mentalhealth.gov/get-help/immediate-help" />
             <ResourceLink Url="https://www.cdc.gov/wtc/mentalhealth.html" />
-            <ResourceLink Url="https://www.betterhelp.com/helpme/?utm_source=AdWordsutm_medium=Search_PPC_cutm_term=%2Bmental+%2Bhealth+%2Bservices_butm_content=112453035975network=gplacement=target=matchtype=b" />
-            <ResourceLink Url="https://www.familycentre.org/counselling?gclid=CjwKCAjwr56IBhAvEiwA1fuqGiu49OZ9QvcC5zf2iGoZEKE6AzCrthZlMpy91E0IZqf4WLxZj2eEzBoCFKcQAvD_BwE" />
+            <ResourceLink Url="https://www.betterhelp.com/helpme/" />
+            <ResourceLink Url="https://www.familycentre.org/counselling" />
             <ResourceLink Url="https://www.samhsa.gov/find-help/national-helpline" />
             <ResourceLink Url="https://salienceneuro.com/7-facebook-pagesto-follow-about-mental-health-support-and-education/" />
             <ResourceLink Url="https://suicidepreventionlifeline.org/" />
@@ -100,8 +110,8 @@ const Resources = () => {
             <button onClick={(e) => (window.location.href = '/Introduction')}>
                 Introduction Page </button>
 
-            <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => window.location.href = "/Login"))}>
-            Log off </button>
+            <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => { window.location.href = "/Login" }))} className="Introductionbutton">
+                Log off </button>
         </div >
     );
 };

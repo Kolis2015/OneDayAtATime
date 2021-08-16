@@ -25,8 +25,8 @@ const BlogPage = () => {
 
     return (
         <div className="letstalk">
-            <h1>BLOG PAGE</h1>
-            <h5>**Please feel free to leave comments in your
+            <h1 className="title1">BLOG PAGE</h1>
+            <h5 className="title3">**Please feel free to leave comments in your
                 blogs at the end of them or suggest links to other
                 sites, etc that might beneft others. I will add them
                 to the Resource Page as soon as I can. Thanks!*</h5>
@@ -42,12 +42,14 @@ const BlogPage = () => {
             }
 
 
-            <button onClick={(e) => (window.location.href = '/')}>
-                Log off </button>
-            <button onClick={(e) => (window.location.href = '/')}>
+           
+            <button onClick={(e) => (window.location.href = '/Postblog')} className="BlogPage">
                 Post a Blog </button>
-            <button onClick={(e) => (window.location.href = '/')}>
-                Home Page </button>
+            <button onClick={(e) => (window.location.href = '/Resources')} className="BlogPage">
+                Resources </button>
+                <button onClick={(e) => (window.location.href = '/Introduction')}className="BlogPage">Introduction Page </button>
+                <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => window.location.href = "/Login"))} className="BlogPage">
+                Log off </button>
 
         </div>
     );

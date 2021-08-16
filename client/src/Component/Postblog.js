@@ -57,28 +57,32 @@ const Postblog = () => {
             });
 
         // navigate to another page
-        // TODO: navigate to the correct page
-        window.location.href = '/';
+        
+        window.location.href = '/BlogPage';
     };
     return (
         <div>
             <h2>Submit Your blog!</h2>
             <img src="Postblog_Background.jpg" className="background" />
-            <h4>Title</h4>
+            <h4>Title:</h4>
             <input
                 type="text"
                 name="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
-            <h4>Text</h4>
+            <h4>Text:</h4>
             <textarea
                 name="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
             <br />
-            <button onClick={(e) => saveBlogPost()}>Submit</button>
+            <button onClick={(e) => saveBlogPost()}className="Postblogbutton">Submit!</button>
+            <button onClick={(e) => (window.location.href = '/Introduction')}className="Postblogbutton">Introduction Page </button>
+            <button onClick={(e) => (window.location.href = '/Resources')} className="Postblogbutton">Resources </button>
+            <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => window.location.href = "/Login"))} className="Postblogbutton">
+                Log off </button>
         </div>
     );
 };

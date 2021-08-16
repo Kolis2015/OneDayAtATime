@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import axios from "axios";
 import { navigate } from '@reach/router';
+import ReactSession from 'react-client-session';
 
 const Introduction = () => {
     useEffect(() => {
@@ -33,19 +34,17 @@ help and can't find the right resources. This site is a place to leave your info
 number; if possible we will try to give you some resouces with information, and also groups that are
 available to join on media websites. Lastly , you can blog on here about your day to relieve the
 pressure and support each other, and also blog about good things as well, so just like a rainbow,
-there's always rains. No bullying, sexism, racism, etc will be tolerated on this site..Thank you. Please
-rank sites that have work the best for you and leave comments</p>       
+there's always rains. No bullying, sexism, racism, etc will be tolerated on this site..Thank you. Please  leave comments in the blogs!</p>       
 
           <h4>Thanks....</h4>
 
-          <h5>Mental illness can afect anyone, it does not discriminate</h5>
+          <h5>Mental illness can affect anyone, it does not discriminate</h5>
           <img src="child.jpg" />
           <img src="BLM.jpg" />
           <img src="vets.jpg" />
           <img src="parents.jpg" />
           <br />
-         <button onClick={(e) => (window.location.href='/')} className="Introductionbutton">
-      Home Page </button>
+         
       <button onClick={(e) => (window.location.href = '/BlogPage')}className="Introductionbutton">
                 Blog Page </button>
                 <button onClick={(e) => (window.location.href='/Resources')} className="Introductionbutton">
@@ -54,10 +53,9 @@ rank sites that have work the best for you and leave comments</p>
             <button onClick={(e) => (window.location.href = '/Postblog')}className="Introductionbutton">
                 Post a Blog </button>
 
-            <button onClick={(e) => (window.location.href = '/Introduction')}className="Introductionbutton">
-                Introduction Page </button>
-      <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => window.location.href = "/Login"))}className="Introductionbutton">
-            Log off </button>
+           
+                <button onClick={(e) => (axios.post("http://localhost:8000/api/User/logout").then(() => {window.location.href = "/Login"}))} className="Introductionbutton">
+                Log off </button>
 
         </div>
     );
